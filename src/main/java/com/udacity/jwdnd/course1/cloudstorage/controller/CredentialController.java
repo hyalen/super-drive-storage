@@ -39,7 +39,6 @@ public class CredentialController {
         if (storedCredential == null) {
             try {
                 int credentialUpload = credentialService.insert(credential, userId);
-                System.out.println("hey im here: " + credentialUpload);
                 if (credentialUpload < 0) {
                     errorMsg = "There was an error uploading this credential.";
                 }
@@ -52,6 +51,24 @@ public class CredentialController {
             if (insertedNote < 0) {
                 errorMsg = "There was an error uploading this credential.";
             }
+        }
+
+        if (errorMsg == null) {
+            model.addAttribute("successOperation", true);
+        } else {
+            model.addAttribute("errorOperation", errorMsg);
+        }
+
+        return "result";
+    }
+
+    @GetMapping("/delete-credential/{credentialId}")
+    public String deleteCredential(@PathVariable(name = "credentialId") Integer credentialId, Model model) {
+        String errorMsg = null;
+        Integer deletedCredential = credentialService.deleteCredential(credentialId);
+
+        if (deletedCredential < 0) {
+            errorMsg = "There was an error uploading this note.";
         }
 
         if (errorMsg == null) {

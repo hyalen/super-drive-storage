@@ -51,7 +51,7 @@
                                 <tbody>
                                 <tr th:each="file : ${fileList}">
                                     <td>
-                                        <a target="_blank" class="btn btn-success">View</a>
+                                        <a th:href="@{download-file(fileName=${file.fileName})}" target="_blank" class="btn btn-success">View</a>
                                         <a th:href="@{delete-file/{fileId}(fileId=${file.fileId})}" class="btn btn-danger">Delete</a>
                                     </td>
                                     <th th:text="${file.fileName}" scope="row"></th>
@@ -138,7 +138,7 @@
                                 <tr th:each="credential : ${credentialList}">
                                     <td>
                                         <button type="button" class="btn btn-success" th:onclick="javascript: showCredentialModal([[${credential.credentialId}]],[[${credential.url}]],[[${credential.username}]],[[${credential.password}]])">Edit</button>
-                                        <a class="btn btn-danger">Delete</a>
+                                        <a th:href="@{delete-credential/__${credential.credentialId}__}" class="btn btn-danger">Delete</a>
                                     </td>
                                     <th th:text="${credential.url}" scope="row"></th>
                                     <td th:text="${credential.username}"></td>
