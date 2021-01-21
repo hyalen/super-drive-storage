@@ -9,7 +9,7 @@
     <body class="p-3 mb-2 bg-light text-black">
         <div class="container justify-content-center w-25 p-3" style="background-color: #eeeeee; margin-top: 5em;">
             <h1 class="display-5">Login</h1>
-            <form action="#" th:action="@{/login}" th:object="${loginForm}" method="POST">
+            <form action="#" th:action="@{/login}" method="POST">
                 <div th:if="${param.error}" class="alert alert-danger">
                     Invalid username or password
                 </div>
@@ -18,11 +18,11 @@
                 </div>
                 <div class="form-group">
                     <label for="inputUsername">Username</label>
-                    <input th:field="*{username}" type="input" class="form-control" name="username" id="inputUsername" placeholder="Enter Username" maxlength="20" required>
+                    <input type="input" class="form-control" name="username" id="inputUsername" placeholder="Enter Username" maxlength="20" required>
                 </div>
                 <div class="form-group">
                     <label for="inputPassword">Password</label>
-                    <input th:field="*{password}" type="password" class="form-control" name="password" id="inputPassword" placeholder="Enter Password" maxlength="20" required>
+                    <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Enter Password" maxlength="20" required>
                 </div>
                 <button type="submit" class="btn btn-primary">Login</button>
             </form>

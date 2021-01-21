@@ -1,7 +1,5 @@
 package com.udacity.jwdnd.course1.cloudstorage.model;
 
-import java.util.ArrayList;
-
 public class User {
     private Integer userId;
     private String username;
@@ -9,8 +7,6 @@ public class User {
     private String password;
     private String firstName;
     private String lastName;
-    private ArrayList<Notes> notes;
-    private ArrayList<Files> files;
 
     public User(Integer userId, String username, String salt, String password, String firstName, String lastName) {
         this.userId = userId;
@@ -67,21 +63,5 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public ArrayList<Notes> getNotes() {
-        return notes;
-    }
-
-    public void setNotes(ArrayList<Notes> notes) {
-        this.notes = notes;
-    }
-
-    public ArrayList<Files> getFiles() {
-        return files;
-    }
-
-    public void setFiles(ArrayList<Files> files) {
-        this.files = files;
     }
 }
