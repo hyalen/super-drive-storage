@@ -86,6 +86,8 @@ public class FileController {
 
         return ResponseEntity
             .ok()
+            .header("Content-Type: application/force-download")
+            .header("Content-type: application/pdf")
             .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + newFile.getFileName() + "\"")
             .body(newFile);
     }
