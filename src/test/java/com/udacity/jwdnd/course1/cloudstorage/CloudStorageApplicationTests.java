@@ -170,8 +170,8 @@ class CloudStorageApplicationTests {
 
 		// checks if the insertion is shown in the UI properly
 		WebElement navNotes = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("nav-notes")));
-		assertThat(navNotes.getText().contains(NOTE_TITLE));
-		assertThat(navNotes.getText().contains(NOTE_DESCRIPTION));
+		assertThat(navNotes.getText().contains(NOTE_TITLE)).isTrue();
+		assertThat(navNotes.getText().contains(NOTE_DESCRIPTION)).isTrue();
 	}
 
 	@Test
