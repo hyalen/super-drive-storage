@@ -33,9 +33,10 @@ public class SignupController {
 
             if (rowsAdded < 0) {
                 model.addAttribute("signupError", "There was an error with your request. Please try again later.");
+            } else {
+                model.addAttribute("signupSuccess", true);
+                return "login";
             }
-
-            model.addAttribute("signupSuccess", true);
         }
 
         return "signup";

@@ -36,7 +36,6 @@ public class NoteController {
                     errorMsg = "There was an error uploading this note.";
                 }
             } catch (Exception e) {
-                System.out.println(e);
                 errorMsg = "There was an error uploading this note.";
             }
         } else {
@@ -52,6 +51,7 @@ public class NoteController {
             model.addAttribute("successOperation", true);
         } else {
             model.addAttribute("errorOperation", errorMsg);
+            return "error";
         }
 
         return "result";

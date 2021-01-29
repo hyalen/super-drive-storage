@@ -55,6 +55,7 @@ public class FileController {
             model.addAttribute("successOperation", true);
         } else {
             model.addAttribute("errorOperation", errorMsg);
+            return "error";
         }
 
         return "result";

@@ -3,16 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
         <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.min.css}">
-
-        <title>Result</title>
+        <title>Error Page</title>
     </head>
     <body class="p-3 mb-2 bg-light text-black">
         <div class="container justify-content-center w-50 p-3" style="margin-top: 5em;">
-            <div id="success-div" class="alert alert-success fill-parent">
-                <h1 id="success-title" class="display-5">Success</h1>
-                <span>Your changes were successfully saved. Click <a id="return-home" th:href="@{/home}">here</a> to continue.</span>
+            <div id="error-div" class="alert alert-danger fill-parent">
+                <h1 id="error-title" class="display-5">Error</h1>
+                <span th:text="${errorOperation}"></span>
+                <span>Click <a th:href="@{/home}">here</a> to continue.</span>
             </div>
         </div>
     </body>
